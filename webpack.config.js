@@ -11,10 +11,17 @@ module.exports = {
         filename : 'bundle-[hash].js'
     },
     devServer : {                  //webpack-dev-server会为根文件夹提供本地服务器
-        port : 2231,
+        port : 2222,
         inline : true,              //源文件改变自动刷新页面
         historyApiFallback : true,   //单页开发使用，默认所有跳转至index.html，也就是不跳转
-        hot :true
+        hot :true,
+        proxy: [
+			{
+				context:['/**'],
+                target: 'http://localhost:3000',
+                changeOrigin: true
+			}
+		]
     },
     module : {
         rules : [
@@ -23,7 +30,7 @@ module.exports = {
                 use : {
                     loader : "babel-loader",
                     options : {
-                        presets : ["react","env"]
+                        presets : ["react","env","stage-0"]
                     }
                 },
                 exclude : /node_modules/

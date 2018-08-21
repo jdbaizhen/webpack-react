@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../../static/css/common.css'
 import './index.less'
 import planet from '../../static/icon/planet.svg'
@@ -10,8 +11,10 @@ class HomeHeader extends React.Component{
         return (
             <div className="clear-fix homeheader-container">
                 <div className="float-left homeheader-left">
-                    {this.props.cityName}
-                    <img src={planet} alt="address"/>
+                    <Link to="/city" className="href">
+                        {this.props.cityName}
+                        <img src={planet} alt="address"/>
+                    </Link>
                 </div>
                 <div className="float-right homeheader-right">
                     <img src={alien} alt="admin"/>

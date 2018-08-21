@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '../../components/Header/index.jsx'
 
 class City extends React.Component{
     constructor(){
@@ -8,7 +9,7 @@ class City extends React.Component{
     render() {
         return (
             <div>
-                CITYPAGE
+                <Header title="选择城市"/>
             </div>
         )  
     }
