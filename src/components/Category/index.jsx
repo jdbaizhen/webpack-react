@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ReactSwipe from 'react-swipe'
 import './index.less'
 
@@ -30,7 +31,11 @@ class Category extends React.Component {
                             return <ul key={index}>
                                 {
                                     item.goods.map( (ite, ind) => {
-                                        return <li key={ind}>{ite}</li>
+                                        return (
+                                            <Link key={ind} to={{pathname:`/search/${ite}`}}>
+                                                <li key={ind}>{ite}</li>
+                                            </Link>
+                                        )
                                     })
                                 }
                             </ul>

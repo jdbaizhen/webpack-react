@@ -13,21 +13,18 @@ import { CITYNAME } from '../../config/localStoreKey.js'
 class Home extends React.Component{
     constructor(props){
         super(props)
-        this.state = {
-        
-        }
     }
     componentDidMount() {
         let { userCityName } = this.props; 
-        let cityName = LocalStore.getItem(CITYNAME)
-        userCityName({cityName})
+        let { cityName } = this.props;
+        if(cityName == null){
+            let cityName = LocalStore.getItem(CITYNAME)
+            userCityName({cityName})
+        }   
     }
-
-
 
     render() {
         let { cityName } = this.props;
-    
         return (
             <div> 
                 <HomeHeader cityName={cityName}/>

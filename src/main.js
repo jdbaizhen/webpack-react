@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import routes from './router/index.js'
 import store from './redux/store.js'
 
 ReactDOM.render(<Provider store={store}>
-    <HashRouter>
+    <BrowserRouter>
         <Switch>
             {
                 routes.map( (route, index) => {
@@ -15,7 +15,7 @@ ReactDOM.render(<Provider store={store}>
                 })
             }
         </Switch>
-    </HashRouter>
+    </BrowserRouter>
 </Provider>
 ,
 document.getElementById('root'));

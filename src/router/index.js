@@ -1,5 +1,6 @@
 import Home from '../pages/home/index.jsx'
 import City from '../pages/city/index.jsx'
+import Search from '../pages/search/index.jsx'
 
 export default [
     {
@@ -9,5 +10,9 @@ export default [
     {
         path: '/city',
         component: City
+    },
+    {
+        path: '/search/:id/:ids?',
+        component: Search
     }
 ]
